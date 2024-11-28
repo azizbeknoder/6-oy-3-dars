@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode Test</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+  </head>
+  <body class="bg-gray-200 dark:bg-[#202C36]">
+    <div class="bg-gray-200 dark:bg-[#202C36]">
+      <header>
+        <nav
+          class="w-full h-20 flex justify-between border-size bg-white dark:bg-[#2B3844]"
+        >
+          <h1 class="text-lg font-bold pl-8 pt-5 text-black dark:text-white">
+            Where in the world?
+          </h1>
+          <button
+            onclick="document.documentElement.classList.toggle('dark')"
+            class="mt-4 px-4 py-2 text-black dark:text-white rounded flex"
+          >
+            <p class="text-sm">Dark Mode</p>
+            <img src="./images/Path.svg" alt="" class="w-5 h-5 pl-2" />
+          </button>
+        </nav>
+      </header>
+      <main>
+        <div class="pt-12 pl-20 flex w-full justify-between">
+          <input
+            type="text"
+            placeholder="Search for a courntry"
+            class="bg-white dark:bg-[#2B3844] text-black dark:text-white w-[480px] h-[56px] text-center"
+          />
+          <div class="relative inline-block text-left pr-[80px]" x-data="{ open: false } ">
+            <!-- Toggle Button -->
+            <button
+              @click="open = !open"
+              class="inline-flex w-[200px] h-[56px] justify-center rounded-md border border-gray-300 bg-white dark:bg-[#2B3844] dark:text-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
+            >
+              Filter by Region
+              <svg
+                class="-mr-1 ml-2 h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div
+              x-show="open"
+              @click.away="open = false"
+              class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white dark:bg[#2B3844] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            >
+              <div class="py-1">
+                <a
+                  href="#"
+                  class="block px-4 pt-0 pb-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:bg-[#2B3844]"
+                  >America</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:bg-[#2B3844]"
+                  >Asia</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-white dark:bg-[#2B3844]"
+                  >Europe</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid gap-6 px-10 pt-5 sm:grid-cols-2 lg:grid-cols-4">
+
+          <div class="bg-white dark:bg-[#2B3844] text-black dark:text-white w-[264px] h-[336px] ">
+            <img src="./images/flag-germany.png" alt="">
+            <h3 class="font-bold pt-6 pb-4 ">Germany</h3>
+            <h4 class="pb-2">Populatioin: 81,770,900</h4>
+            <h4 class="pb-2">Region: Europa</h4>
+            <h4 class="pb-2">Capital: Berlin</h4>
+          </div>
+          <div class="bg-white dark:bg-[#2B3844] text-black dark:text-white w-[264px] h-[336px]">
+            <img src="./images/flag-usa.jpg" alt="">
+            <h3 class="font-bold pt-6 pb-4 ">United States of America </h3>
+            <h4 class="pb-2">Populatioin: 323,947,000</h4>
+            <h4 class="pb-2">Region: Americas</h4>
+            <h4 class="pb-2">Capital: Washington</h4>
+          </div>
+          <div class="bg-white dark:bg-[#2B3844] text-black dark:text-white w-[264px] h-[336px]">
+            <img src="./images/flag-brazil.jpg" alt="">
+            <h3 class="font-bold pt-6 pb-4 ">Brazil</h3>
+            <h4 class="pb-2">Populatioin: 206,135,900</h4>
+            <h4 class="pb-2">Region: Americas</h4>
+            <h4 class="pb-2">Capital: Brasil</h4>
+          </div>
+          <div class="bg-white dark:bg-[#2B3844] text-black dark:text-white w-[264px] h-[336px]">
+            <img src="./images/flag-island.png" alt="">
+            <h3 class="font-bold pt-6 pb-4 ">Iceland</h3>
+            <h4 class="pb-2">Populatioin: 334,400</h4>
+            <h4 class="pb-2">Region: Europa</h4>
+            <h4 class="pb-2">Capital: Reykjavik</h4>
+          </div>
+          <div class="bg-white dark:bg-[#2B3844] text-black dark:text-white w-[264px] h-[336px]">
+            <img src="./images/flag-afganistan.png" alt="">
+            <h3 class="font-bold pt-6 pb-4 ">Afganistan</h3>
+            <h4 class="pb-2">Populatioin: 26,670,900</h4>
+            <h4 class="pb-2">Region: Asia</h4>
+            <h4 class="pb-2">Capital: Kabul</h4>
+          </div>
+          <div class="bg-white dark:bg-[#2B3844] text-black dark:text-white w-[264px] h-[336px]">
+            <img src="./images/flag-aland-islands.png" alt="">
+            <h3 class="font-bold pt-6 pb-4 ">Aland Island</h3>
+            <h4 class="pb-2">Populatioin: 28,875</h4>
+            <h4 class="pb-2">Region: Europa</h4>
+            <h4 class="pb-2">Capital: Mariehamn</h4>
+          </div>
+          <div class="bg-white dark:bg-[#2B3844] text-black dark:text-white w-[264px] h-[336px]">
+            <img src="./images/flag-albania.png" alt="">
+            <h3 class="font-bold pt-6 pb-4 ">Albania</h3>
+            <h4 class="pb-2">Populatioin: 2,886,026</h4>
+            <h4 class="pb-2">Region: Europa</h4>
+            <h4 class="pb-2">Capital: Tirana</h4>
+          </div>
+          <div class="bg-white dark:bg-[#2B3844] text-black dark:text-white w-[264px] h-[336px]">
+            <img src="./images/flag-algeria.png" alt="">
+            <h3 class="font-bold pt-6 pb-4 ">Algeria</h3>
+            <h4 class="pb-2">Populatioin: 40,400,000</h4>
+            <h4 class="pb-2">Region: Africa</h4>
+            <h4 class="pb-2">Capital: Algeries</h4>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
